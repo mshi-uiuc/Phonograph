@@ -215,9 +215,10 @@ public class CardPlayerFragment extends AbsPlayerFragment implements PlayerAlbum
     private void updateQueuePosition() {
         playingQueueAdapter.setCurrent(MusicPlayerRemote.getPosition());
         playerQueueSubHeader.setText(getUpNextAndQueueTime());
-        if (slidingUpPanelLayout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
+        // CHANGED: Auto refresh to newest song
+//        if (slidingUpPanelLayout.getPanelState() == SlidingUpPanelLayout.PanelState.COLLAPSED) {
             resetToCurrentPosition();
-        }
+//        }
     }
 
     @SuppressWarnings("ConstantConditions")
