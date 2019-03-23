@@ -43,9 +43,11 @@ public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAda
     @Override
     public void onBindViewHolder(@NonNull SongAdapter.ViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
-        if (holder.imageText != null) {
-            holder.imageText.setText(String.valueOf(position - current));
-        }
+
+        // CHANGED: Removed numbers from playing
+//        if (holder.imageText != null) {
+//            holder.imageText.setText(String.valueOf(position - current));
+//        }
 
         if (holder.getItemViewType() == HISTORY || holder.getItemViewType() == CURRENT) {
             setAlpha(holder, 0.5f);
@@ -133,7 +135,7 @@ public class PlayingQueueAdapter extends SongAdapter implements DraggableItemAda
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             if (imageText != null) {
-                imageText.setVisibility(View.VISIBLE);
+                imageText.setVisibility(View.GONE);
             }
             if (image != null) {
                 image.setVisibility(View.GONE);
